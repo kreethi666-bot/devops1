@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/kreethi666-bot/devops1.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Building the project..."
+                sh 'echo Build successful'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+                sh 'echo Tests passed'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying application..."
+                sh 'echo Deployment done'
+            }
+        }
+    }
+}
